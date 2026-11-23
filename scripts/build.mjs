@@ -60,7 +60,9 @@ const STATIC_CSP = [
   "default-src 'self'", "script-src 'self'", "style-src 'self'", "style-src-attr 'unsafe-inline'",
   "img-src 'self' data: blob:", "font-src 'self'", "connect-src 'self' https://formsubmit.co https://api.web3forms.com",
   "media-src 'self' blob:", "worker-src 'self' blob:", "object-src 'none'", "base-uri 'self'", "form-action 'self'",
-  'upgrade-insecure-requests',
+  // no upgrade-insecure-requests here: while GitHub is still issuing the HTTPS certificate the
+  // site is served over plain http, and upgrading its own files to https would break the page.
+  // GitHub's "Enforce HTTPS" moves everyone to https once the certificate is ready.
 ].join('; ');
 
 function page(lang) {
