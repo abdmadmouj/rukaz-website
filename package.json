@@ -1,0 +1,31 @@
+{
+  "name": "rukaz-site",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "RUKAZ website: the glass sculpture, the story, and the introduction forms.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs --prod",
+    "build:dev": "node scripts/build.mjs",
+    "start": "NODE_ENV=production node dist-server/server.mjs",
+    "dev": "node scripts/build.mjs && node dist-server/server.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "gsap": "3.15.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "0.170.0",
+    "esbuild": "^0.24.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
